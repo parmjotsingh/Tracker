@@ -34,11 +34,12 @@ A smart and simple React + Spring Boot full-stack application to track income, e
             npm start
     
 
-📦 API Reference
-    GET /api/transactions – Fetch all transactions
-    POST /api/transactions – Add a new transaction
-    POST /api/auth/login – User login
-    POST /api/auth/register – User registration
+# 📦 API Reference
+- GET /api/transactions – Fetch all transactions
+- POST /api/transactions – Add a new transaction
+- POST /api/auth/login – User login
+- POST /api/auth/register – User registration
 
 # Check Backend code at following github repositiory
+- https://github.com/parmjotsingh/Tracker-Backend
     
