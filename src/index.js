@@ -1,8 +1,11 @@
 import "../public/App.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-const App = () => <h1>Hello, React + Parcel!</h1>;
+import App from "./components/App.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
