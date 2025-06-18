@@ -1,4 +1,7 @@
 const InputField = ({ type, handleChange, data, error, fieldName }) => {
+  console.log("data " + JSON.stringify(data));
+  console.log("data " + fieldName.toLowerCase());
+  console.log(`data " + ${data?.[fieldName.toLowerCase()]}`);
   return (
     // htmlFor="Email"
     <label className="w-full">
@@ -7,7 +10,7 @@ const InputField = ({ type, handleChange, data, error, fieldName }) => {
         type={type} //"email"
         className="mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm h-9 px-3"
         onChange={(e) => handleChange(e, fieldName.toLowerCase())}
-        value={data?.fieldName}
+        value={data?.[fieldName.toLowerCase()]}
       />
       {error != undefined && (
         <span className="text-xs text-red-400 w-full flex justify-end mt-1 pr-2">

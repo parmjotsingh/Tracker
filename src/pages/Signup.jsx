@@ -109,6 +109,7 @@ const Signup = () => {
                   handleChange={handleChange}
                   error={error.errors?.response?.data?.name}
                   fieldName={"Name"}
+                  value={data.name}
                 />
               )}
               <InputField
@@ -117,6 +118,7 @@ const Signup = () => {
                 handleChange={handleChange}
                 error={error.errors?.response?.data?.email}
                 fieldName={"Email"}
+                value={data.email}
               />
               <InputField
                 type={"password"}
@@ -124,6 +126,7 @@ const Signup = () => {
                 handleChange={handleChange}
                 error={error.errors?.response?.data?.password}
                 fieldName={"Password"}
+                value={data.password}
               />
               <div className="w-full flex justify-between items-center">
                 <div>
