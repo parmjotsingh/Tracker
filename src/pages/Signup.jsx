@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { loginUser, signUp } from "../services/user-service";
-import InputField from "../components/loginFields/InputField";
+import { loginUser, signUp } from "../services/user-service.js";
+import InputField from "../components/loginFields/InputField.jsx";
 import { doLogin } from "../auth/index.js";
-import Base from "../components/Base.js";
+import Base from "../components/Base.jsx";
 
 const Signup = () => {
   const [loginPageVisible, setloginPageVisible] = useState(true);
@@ -55,7 +55,7 @@ const Signup = () => {
             errors: error,
             isError: true,
           });
-          if (error.response.status == 400 || error.response.status == 404)
+          if (error?.response?.status == 400 || error?.response?.status == 404)
             toast.error(error.response.data.message);
           else
             toast.error(
@@ -91,68 +91,72 @@ const Signup = () => {
   return (
     <Base>
       <div className=" max-w-full h-[700px] flex justify-center items-center">
-        <div className="bg-white flex justify-center py-4">
-          <div className="min-w-md block rounded-md border border-gray-300 p-4 shadow-sm sm:p-6">
-            <div className="h-fit px-4 py-3">
-              <form
-                className="h-fit grid grid-flow-col grid-rows-4 gap-6"
-                onSubmit={(event) => event.preventDefault()}
-              >
-                {!loginPageVisible && (
-                  <InputField
-                    type={"text"}
-                    data={data}
-                    handleChange={handleChange}
-                    error={error.errors?.response?.data?.name}
-                    fieldName={"Name"}
-                  />
-                )}
-                <InputField
-                  type={"email"}
-                  data={data}
-                  handleChange={handleChange}
-                  error={error.errors?.response?.data?.email}
-                  fieldName={"Email"}
-                />
-                <InputField
-                  type={"password"}
-                  data={data}
-                  handleChange={handleChange}
-                  error={error.errors?.response?.data?.password}
-                  fieldName={"Password"}
-                />
-                <div className="w-full flex justify-between items-center">
-                  <div>
-                    <button
-                      onClick={submitForm}
-                      className="group relative inline-block text-sm font-medium text-teal-600 focus:ring-3 focus:outline-hidden"
-                    >
-                      <span className="absolute inset-0 translate-x-0 translate-y-0 bg-teal-600 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+        {/* <div className="bg-white py-4 h-[400px]"> */}
 
-                      <span className="relative block border border-current bg-white px-8 py-3">
-                        {loginPageVisible ? (
-                          <span>Login</span>
-                        ) : (
-                          <span>Register</span>
-                        )}
-                      </span>
-                    </button>
-                  </div>
+        <div className="min-w-sm rounded-md border border-gray-300 p-4 shadow-sm sm:p-6 ">
+          <span className="w-full flex justify-center font-medium text-lg text-teal-600 tracking-widest">
+            {loginPageVisible ? "Login" : "Sign Up"}
+          </span>
+          <div className="h-full px-4 py-3 w-full">
+            <form
+              className="h-full flex flex-col gap-6 items-center"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              {!loginPageVisible && (
+                <InputField
+                  type={"text"}
+                  data={data}
+                  handleChange={handleChange}
+                  error={error.errors?.response?.data?.name}
+                  fieldName={"Name"}
+                />
+              )}
+              <InputField
+                type={"email"}
+                data={data}
+                handleChange={handleChange}
+                error={error.errors?.response?.data?.email}
+                fieldName={"Email"}
+              />
+              <InputField
+                type={"password"}
+                data={data}
+                handleChange={handleChange}
+                error={error.errors?.response?.data?.password}
+                fieldName={"Password"}
+              />
+              <div className="w-full flex justify-between items-center">
+                <div>
                   <button
-                    className="text-sm text-gray-500 hover:underline hover:text-blue-500 hover:cursor-pointer"
-                    onClick={() => setloginPageVisible(!loginPageVisible)}
+                    onClick={submitForm}
+                    className="group relative inline-block text-sm font-medium text-teal-600 focus:ring-3 focus:outline-hidden"
                   >
-                    {loginPageVisible ? (
-                      <span>Register as a user</span>
-                    ) : (
-                      <span>Already a user?</span>
-                    )}
+                    <span className="absolute inset-0 translate-x-0 translate-y-0 bg-teal-600 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+
+                    <span className="relative block border border-current bg-white px-8 py-3">
+                      {loginPageVisible ? (
+                        <span>Login</span>
+                      ) : (
+                        <span>Register</span>
+                      )}
+                    </span>
                   </button>
                 </div>
-              </form>
-            </div>
+                <button
+                  className="text-sm text-gray-500 hover:underline hover:text-blue-500 hover:cursor-pointer"
+                  onClick={() => setloginPageVisible(!loginPageVisible)}
+                >
+                  {loginPageVisible ? (
+                    <span>Register as a user</span>
+                  ) : (
+                    <span>Already a user?</span>
+                  )}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
+        {/* </div> */}
       </div>
     </Base>
   );

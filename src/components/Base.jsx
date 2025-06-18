@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 const Base = ({ title = "Welcome", children }) => {
@@ -5,7 +6,7 @@ const Base = ({ title = "Welcome", children }) => {
     <div className="min-h-screen flex flex-col">
       <NavBar />
       {children}
-      <div className="w-full bg-amber-400 h-full text-5xl">Footer</div>
+      <Footer />
     </div>
   );
 };

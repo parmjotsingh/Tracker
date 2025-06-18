@@ -34,7 +34,7 @@ const NavBar = () => {
                   <li>
                     <Link
                       className="text-gray-500 transition hover:text-gray-500/75"
-                      to="#"
+                      to="/about"
                     >
                       About
                     </Link>

@@ -1,8 +1,8 @@
 const InputField = ({ type, handleChange, data, error, fieldName }) => {
   return (
     // htmlFor="Email"
-    <label>
-      <span className="text-xl font-medium text-gray-700">{fieldName}</span>
+    <label className="w-full">
+      <span className="font-medium text-gray-500">{fieldName}</span>
       <input
         type={type} //"email"
         className="mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm h-9 px-3"
