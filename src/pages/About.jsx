@@ -3,7 +3,7 @@ import Base from "../components/Base.jsx";
 const About = () => {
   return (
     <Base>
-      <section className="mt-40 py-12 px-4 sm:px-6 lg:px-8 flex-grow flex justify-center">
+      <section className="sm:mt-40 py-12 px-4 sm:px-6 lg:px-8 flex-grow flex justify-center">
         <div className=" sm:w-3xl ">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">About us</h2>
 

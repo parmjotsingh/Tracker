@@ -4,6 +4,8 @@ import { doLogout, getCurrentUserDetail, isLoggedIn } from "../auth";
 const NavBar = () => {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState(null);
+  const [menuDropDownVisible, setMenuDropDownVisible] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     setLogin(isLoggedIn());
@@ -48,43 +50,6 @@ const NavBar = () => {
                       Home
                     </Link>
                   </li>
-
-                  {/* <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="#"
-                    >
-                      {" "}
-                      History
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="#"
-                    >
-                      Services
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="#"
-                    >
-                      Projects
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="#"
-                    >
-                      Blog
-                    </a>
-                  </li> */}
                 </ul>
               </nav>
 
@@ -124,7 +89,10 @@ const NavBar = () => {
                 </div>
 
                 <div className="block md:hidden">
-                  <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+                  <button
+                    className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                    onClick={() => setMenuDropDownVisible(!menuDropDownVisible)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="size-5"
@@ -140,6 +108,28 @@ const NavBar = () => {
                       />
                     </svg>
                   </button>
+                  {menuDropDownVisible && (
+                    <div
+                      role="menu"
+                      className="absolute end-4 top-14 z-auto w-35 overflow-hidden rounded border border-gray-300 bg-white shadow-sm"
+                    >
+                      <Link
+                        to="/home"
+                        className="block text-center px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        Home
+                      </Link>
+
+                      <Link
+                        to="/about"
+                        className="block text-center px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                        role="menuitem"
+                      >
+                        About
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

@@ -90,10 +90,10 @@ const Signup = () => {
 
   return (
     <Base>
-      <div className=" max-w-full h-[700px] flex justify-center items-center">
+      <div className="max-w-screen sm:max-w-full flex-grow flex justify-center items-center">
         {/* <div className="bg-white py-4 h-[400px]"> */}
 
-        <div className="min-w-sm rounded-md border border-gray-300 p-4 shadow-sm sm:p-6 ">
+        <div className="min-w-full sm:min-w-sm sm:rounded-md sm:border border-gray-300 p-4 sm:shadow-sm sm:p-6">
           <span className="w-full flex justify-center font-medium text-lg text-teal-600 tracking-widest">
             {loginPageVisible ? "Login" : "Sign Up"}
           </span>
@@ -166,7 +166,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-/*
-<form className="h-fit grid grid-flow-col grid-rows-4 gap-6" onSubmit={(event)=>event.preventDefault()}>{loginFieldVisible&&(<label htmlFor="Name"><span className="text-xl font-medium text-gray-700">Name</span><input type="text" className="mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm h-9 px-3" onChange={(e)=>handleChange(e,"name")}value={data.name}aria-invalid="true"/>{error.errors?.response?.data?.name!=undefined&&(<span className="text-xs text-red-400 w-full flex justify-end mt-1 pr-2">{error.errors?.response?.data?.name}</span>)}</label>)}<InputField type={"email"}data={data}handleChange={handleChange}error={error}/><label htmlFor="Email"><span className="text-xl font-medium text-gray-700">Email</span><input type="email" className="mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm h-9 px-3" onChange={(e)=>handleChange(e,"email")}value={data.email}/>{error.errors?.response?.data?.email!=undefined&&(<span className="text-xs text-red-400 w-full flex justify-end mt-1 pr-2">{error.errors?.response?.data?.email}</span>)}</label><label htmlFor="Password"><span className="text-xl font-medium text-gray-700">Password</span><input type="password" className="mt-0.5 w-full rounded border border-gray-300 shadow-sm sm:text-sm h-9 px-3" onChange={(e)=>handleChange(e,"password")}value={data.password}/>{error.errors?.response?.data?.password!=undefined&&(<span className="text-xs text-red-400 w-full flex justify-end mt-1 pr-2">{error.errors?.response?.data?.password}</span>)}</label><div className="w-full flex justify-between items-center"><div><button onClick={submitForm}className="group relative inline-block text-sm font-medium text-teal-600 focus:ring-3 focus:outline-hidden"><span className="absolute inset-0 translate-x-0 translate-y-0 bg-teal-600 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span><span className="relative block border border-current bg-white px-8 py-3">{loginFieldVisible?(<span>Register</span>):(<span>Login</span>)}</span></button></div><button className="text-sm text-gray-500 hover:underline hover:text-blue-500 hover:cursor-pointer" onClick={()=>setloginFieldVisible(!loginFieldVisible)}>{loginFieldVisible?(<span>Already a user?</span>):(<span>Register as a user</span>)}</button></div></form>
- */
