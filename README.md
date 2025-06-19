@@ -18,7 +18,8 @@ A smart and simple React + Spring Boot full-stack application to track income, e
 
 ## Installation
 ### Node.js installation
-        Note to run the project at local system you need "Node" installed in your system. Do following to install Node.js
+        Note to run the project at local system you need "Node" installed in your system. 
+        Do following to install Node.js
         1.  Go to https://nodejs.org/en/download
             Download the LTS (Long-Term Support) version (recommended for most users).
         2.  Run the installer and follow the prompts.
@@ -37,7 +38,8 @@ A smart and simple React + Spring Boot full-stack application to track income, e
             npm start
     
 
-# 📦 API Reference
+# 📦 API Reference 
+  API consumed at frontend. For details of APIs please check backend repository
 - GET /api/transactions – Fetch all transactions
 - POST /api/transactions – Add a new transaction
 - POST /api/auth/login – User login
