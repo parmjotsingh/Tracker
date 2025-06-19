@@ -28,9 +28,10 @@ A smart and simple React + Spring Boot full-stack application to track income, e
 ### Frontend
         1. Clone the project and open it in Code editor. Use the commnad to go into project root directory if needed
             cd budget-tracker-frontend
-        2. Run the following command to install all dependencies
+        2. Goto helper.js (src/services/helper.js) and change BASE_URL = "http://localhost:8080" to point to your backend server;    
+        3. Run the following command to install all dependencies
             npm install
-        3. Start the server using this command
+        4. Start the server using this command
             npm start
     
 
@@ -42,4 +43,4 @@ A smart and simple React + Spring Boot full-stack application to track income, e
 
 # Check Backend code at following github repositiory
 - https://github.com/parmjotsingh/Tracker-Backend
-    
+
