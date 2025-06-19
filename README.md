@@ -2,6 +2,8 @@
 
 A smart and simple React + Spring Boot full-stack application to track income, expenses, and budgeting — all in one place.
 
+![alt text](image.png)
+
 ## Features
 
 - Track income and expenses
@@ -43,4 +45,3 @@ A smart and simple React + Spring Boot full-stack application to track income, e
 
 # Check Backend code at following github repositiory
 - https://github.com/parmjotsingh/Tracker-Backend
-
