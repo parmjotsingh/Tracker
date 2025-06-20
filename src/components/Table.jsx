@@ -20,19 +20,19 @@ const Table = ({ transactions, handleActions, setFetchTransactions }) => {
     setEditRowId(entryId);
   };
   const handleSave = (entryId) => {
-    // if (rowFieldsData.date.trim() == 0) {
-    //   toast.error("Please Select Date");
-    //   return;
-    // } else if (rowFieldsData.description.trim() == 0) {
-    //   toast.error("Please fill description");
-    //   return;
-    // } else if (rowFieldsData.type.trim() == 0) {
-    //   toast.error("Please Select Type");
-    //   return;
-    // } else if (rowFieldsData.amount <= 0) {
-    //   toast.error("Please enter amount");
-    //   return;
-    // }
+    if (rowFieldsData.date.trim() == 0) {
+      toast.error("Please Select Date");
+      return;
+    } else if (rowFieldsData.description.trim() == 0) {
+      toast.error("Please fill description");
+      return;
+    } else if (rowFieldsData.type.trim() == 0) {
+      toast.error("Please Select Type");
+      return;
+    } else if (rowFieldsData.amount <= 0) {
+      toast.error("Please enter amount");
+      return;
+    }
     // callApi;
     updateTransaction(entryId, rowFieldsData)
       .then(() => {
