@@ -33,6 +33,16 @@ const NavBar = () => {
             <div className="md:flex md:items-center md:gap-12">
               <nav aria-label="Global" className="hidden md:block">
                 <ul className="flex items-center gap-6 text-sm">
+                  {isLoggedIn() == true && (
+                    <li>
+                      <Link
+                        className="text-gray-500 transition hover:text-gray-500/75"
+                        to="/user/dashboard"
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                  )}
                   <li>
                     <Link
                       className="text-gray-500 transition hover:text-gray-500/75"

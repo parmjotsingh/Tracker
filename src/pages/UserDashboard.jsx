@@ -3,6 +3,7 @@ import Base from "../components/Base";
 import Table from "../components/Table";
 import {
   addUserTransaction,
+  deleteTransaction,
   loadUserTransaction,
 } from "../services/transaction-services";
 import { getCurrentUserDetail } from "../auth/index.js";
@@ -49,6 +50,24 @@ const UserDashboard = () => {
       ...inputFieldData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleActions = (action, entryId) => {
+    if (action == "edit") {
+      toast.dark("EDITing");
+    } else if (action == "delete") {
+      toast.promise(
+        deleteTransaction(entryId).then((response) => {
+          setFetchTransactions(true);
+          return response;
+        }),
+        {
+          pending: "Processing",
+          success: "Entry deleted👌",
+          error: "Error 🤯",
+        }
+      );
+    }
   };
 
   const addTransaction = () => {
@@ -141,7 +160,11 @@ const UserDashboard = () => {
         </div>
         {/* Table */}
         <div className="row-span-2">
-          <Table transactions={transactions} />
+          <Table
+            transactions={transactions}
+            handleActions={handleActions}
+            setFetchTransactions={setFetchTransactions}
+          />
         </div>
       </div>
     </Base>

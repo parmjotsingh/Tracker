@@ -15,3 +15,19 @@ export const loadUserTransaction = (userId) => {
       return response.data;
     });
 };
+
+export const deleteTransaction = (entryId) => {
+  return myPrivateAxios
+    .delete(`/api/transactions/${entryId}`)
+    .then((response) => {
+      return response.data;
+    });
+};
+
+export const updateTransaction = (entryId, data) => {
+  return myPrivateAxios
+    .put(`/api/transactions/${entryId}`, data)
+    .then((response) => {
+      return response.data;
+    });
+};

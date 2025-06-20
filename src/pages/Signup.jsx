@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { loginUser, signUp } from "../services/user-service.js";
 import InputField from "../components/loginFields/InputField.jsx";
-import { doLogin } from "../auth/index.js";
+import { doLogin, isLoggedIn } from "../auth/index.js";
 import Base from "../components/Base.jsx";
 
 const Signup = () => {
@@ -16,6 +16,11 @@ const Signup = () => {
   });
   const [error, setError] = useState({ errors: {}, isError: false });
   const navigate = useNavigate();
+  useEffect(() => {
+    if (isLoggedIn()) {
+      navigate("/user/dashboard");
+    }
+  }, []);
 
   const handleChange = (e, fieldname) => {
     setData({ ...data, [fieldname]: e.target.value });
