@@ -58,11 +58,11 @@ const Table = ({ transactions, handleActions, setFetchTransactions }) => {
       <table className="min-w-full divide-y-2 divide-gray-200">
         <thead className="ltr:text-left rtl:text-right">
           <tr className="*:font-medium *:text-gray-900 ">
-            <th className="px-3 py-2 whitespace-nowrap">Date</th>
-            <th className="px-3 py-2 whitespace-nowrap">Description</th>
-            <th className="px-3 py-2 whitespace-nowrap">Type</th>
-            <th className="px-3 py-2 whitespace-nowrap">Amount</th>
-            <th className="px-3 py-2 whitespace-nowrap w-1"></th>
+            <th className="px-3 py-2 whitespace-nowrap w-1/4">Date</th>
+            <th className="px-3 py-2 whitespace-nowrap w-1/3">Description</th>
+            <th className="px-3 py-2 whitespace-nowrap w-1/5">Type</th>
+            <th className="px-3 py-2 whitespace-nowra w-1/6">Amount</th>
+            <th className="px-3 py-2 whitespace-nowrap"></th>
             <th className="px-3 py-2 whitespace-nowrap hidden">EntryId</th>
           </tr>
         </thead>
